@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OUAC — Ontario Universities' Application Centre</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts: Fraunces (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+
+  <!-- =============================================
+       SIDEBAR NAVIGATION
+  ============================================= -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <!-- Leaf SVG logo mark -->
+      <div class="logo-mark">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 2C14 2 4 8 4 16C4 21.5 8.5 26 14 26C19.5 26 24 21.5 24 16C24 8 14 2 14 2Z" fill="var(--green-600)" opacity="0.9"/>
+          <path d="M14 2C14 2 18 10 14 26" stroke="var(--beige-100)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-main">OUAC</span>
+        <span class="logo-sub">Student Portal</span>
+      </div>
+    </div>
+
+    <!-- Student Profile -->
+    <div class="sidebar-profile">
+      <div class="avatar">JL</div>
+      <div class="profile-info">
+        <span class="profile-name">Jamie Bhavsar</span>
+        <span class="profile-status">
+          <span class="status-dot"></span>Application Active
+        </span>
+      </div>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="sidebar-nav">
+      <span class="nav-label">Main</span>
+      <a href="#" class="nav-item active" data-page="dashboard">
+        <i data-lucide="layout-dashboard"></i>
+        <span>Dashboard</span>
+      </a>
+      <a href="#" class="nav-item" data-page="explorer">
+        <i data-lucide="compass"></i>
+        <span>Program Explorer</span>
+      </a>
+      <a href="#" class="nav-item" data-page="builder">
+        <i data-lucide="file-pen-line"></i>
+        <span>Application Builder</span>
+        <span class="nav-badge">3/5</span>
+      </a>
+      <a href="#" class="nav-item" data-page="tracker">
+        <i data-lucide="activity"></i>
+        <span>Application Tracker</span>
+      </a>
+
+      <span class="nav-label" style="margin-top:1.5rem;">Support</span>
+      <a href="#" class="nav-item" id="ai-toggle">
+        <i data-lucide="bot"></i>
+        <span>AI Assistant</span>
+        <span class="nav-badge new">New</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i data-lucide="book-open"></i>
+        <span>Help Centre</span>
+      </a>
+    </nav>
+
+    <!-- Sidebar Footer -->
+    <div class="sidebar-footer">
+      <div class="deadline-reminder">
+        <i data-lucide="clock" style="width:14px;height:14px;"></i>
+        <div>
+          <span class="dr-label">Next Deadline</span>
+          <span class="dr-date">Jan 15 — Equal Consideration</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =============================================
+       MAIN CONTENT AREA
+  ============================================= -->
+  <main class="main-content" id="main-content">
+
+    <!-- Top Bar -->
+    <header class="topbar">
+      <button class="menu-toggle" id="menu-toggle">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="topbar-title" id="topbar-title">Dashboard</div>
+      <div class="topbar-actions">
+        <button class="icon-btn" title="Notifications">
+          <i data-lucide="bell"></i>
+          <span class="notif-dot"></span>
+        </button>
+        <button class="icon-btn" title="Settings">
+          <i data-lucide="settings"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- =============================================
+         PAGE: DASHBOARD
+    ============================================= -->
+    <section class="page active" id="page-dashboard">
+
+      <!-- Welcome Banner -->
+      <div class="welcome-banner">
+        <div class="welcome-text">
+          <h1>Good morning, Jamie <span class="wave">👋</span></h1>
+          <p>Your application is <strong>62% complete</strong>. A few more steps and you're ready to submit!</p>
+        </div>
+        <div class="welcome-leaves">
+          <svg class="leaf-deco" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60 10C60 10 20 35 20 65C20 88 38 106 60 106C82 106 100 88 100 65C100 35 60 10 60 10Z" fill="var(--green-400)" opacity="0.15"/>
+            <path d="M75 15C75 15 50 40 60 106" stroke="var(--green-500)" stroke-width="1" stroke-dasharray="4 3" opacity="0.4" stroke-linecap="round"/>
+            <path d="M45 20C45 20 30 50 55 106" stroke="var(--green-400)" stroke-width="1" stroke-dasharray="4 3" opacity="0.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <button class="cta-btn" data-page="builder">Continue Application →</button>
+      </div>
+
+      <div class="dashboard-grid">
+
+        <!-- Progress Card -->
+        <div class="card card-progress">
+          <div class="card-header">
+            <h3>Application Checklist</h3>
+            <span class="chip chip-green">3 of 5 done</span>
+          </div>
+          <div class="checklist">
+            <div class="check-item done">
+              <div class="check-icon"><i data-lucide="check"></i></div>
+              <div class="check-info">
+                <span class="check-title">Personal Information</span>
+                <span class="check-sub">Completed Jan 3</span>
+              </div>
+            </div>
+            <div class="check-item done">
+              <div class="check-icon"><i data-lucide="check"></i></div>
+              <div class="check-info">
+                <span class="check-title">Academic History</span>
+                <span class="check-sub">Completed Jan 4</span>
+              </div>
+            </div>
+            <div class="check-item done">
+              <div class="check-icon"><i data-lucide="check"></i></div>
+              <div class="check-info">
+                <span class="check-title">Program Selection</span>
+                <span class="check-sub">3 programs added</span>
+              </div>
+            </div>
+            <div class="check-item active">
+              <div class="check-icon pending"><i data-lucide="circle-dashed"></i></div>
+              <div class="check-info">
+                <span class="check-title">Review & Confirm</span>
+                <span class="check-sub">In progress</span>
+              </div>
+              <button class="mini-btn" data-page="builder">Resume</button>
+            </div>
+            <div class="check-item">
+              <div class="check-icon locked"><i data-lucide="lock"></i></div>
+              <div class="check-info">
+                <span class="check-title">Payment & Submission</span>
+                <span class="check-sub">Complete review first</span>
+              </div>
+            </div>
+          </div>
+          <!-- Progress Bar -->
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-track">
+              <div class="progress-bar-fill" style="width: 62%"></div>
+            </div>
+            <span class="progress-label">62%</span>
+          </div>
+        </div>
+
+        <!-- Deadlines Timeline -->
+        <div class="card card-deadlines">
+          <div class="card-header">
+            <h3>Upcoming Deadlines</h3>
+            <span class="chip">2026</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item urgent">
+              <div class="tl-dot urgent"></div>
+              <div class="tl-content">
+                <span class="tl-title">Equal Consideration Deadline</span>
+                <span class="tl-sub">All Ontario universities</span>
+              </div>
+              <span class="tl-date urgent">Jan 15</span>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-title">University of Toronto Supplemental</span>
+                <span class="tl-sub">Engineering programs</span>
+              </div>
+              <span class="tl-date">Feb 1</span>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-title">Transcript Submission</span>
+                <span class="tl-sub">Mid-year grades due</span>
+              </div>
+              <span class="tl-date">Mar 1</span>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot future"></div>
+              <div class="tl-content">
+                <span class="tl-title">Offer Decisions Due</span>
+                <span class="tl-sub">Accept or decline offers</span>
+              </div>
+              <span class="tl-date">Jun 1</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- University Status Cards -->
+        <div class="card card-universities">
+          <div class="card-header">
+            <h3>Application Status</h3>
+            <button class="link-btn" data-page="tracker">View all →</button>
+          </div>
+          <div class="uni-cards">
+            <div class="uni-card">
+              <div class="uni-logo ut">UT</div>
+              <div class="uni-info">
+                <span class="uni-name">University of Toronto</span>
+                <span class="uni-program">Computer Science — St. George</span>
+              </div>
+              <span class="status-chip submitted">Submitted</span>
+            </div>
+            <div class="uni-card">
+              <div class="uni-logo uw">UW</div>
+              <div class="uni-info">
+                <span class="uni-name">University of Waterloo</span>
+                <span class="uni-program">Software Engineering</span>
+              </div>
+              <span class="status-chip review">Under Review</span>
+            </div>
+            <div class="uni-card">
+              <div class="uni-logo yor">YU</div>
+              <div class="uni-info">
+                <span class="uni-name">York University</span>
+                <span class="uni-program">Computer Science</span>
+              </div>
+              <span class="status-chip draft">Draft</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="card card-actions">
+          <div class="card-header">
+            <h3>Quick Actions</h3>
+          </div>
+          <div class="action-grid">
+            <button class="action-btn" data-page="explorer">
+              <div class="action-icon"><i data-lucide="search"></i></div>
+              <span>Explore Programs</span>
+            </button>
+            <button class="action-btn" data-page="builder">
+              <div class="action-icon"><i data-lucide="file-pen-line"></i></div>
+              <span>Continue App</span>
+            </button>
+            <button class="action-btn" data-page="tracker">
+              <div class="action-icon"><i data-lucide="activity"></i></div>
+              <span>Track Status</span>
+            </button>
+            <button class="action-btn" id="ai-quick">
+              <div class="action-icon"><i data-lucide="bot"></i></div>
+              <span>Ask AI</span>
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /dashboard-grid -->
+    </section>
+
+    <!-- =============================================
+         PAGE: PROGRAM EXPLORER
+    ============================================= -->
+    <section class="page" id="page-explorer">
+      <div class="page-hero">
+        <h2>Program Explorer</h2>
+        <p>Discover programs across all Ontario universities</p>
+      </div>
+
+      <!-- Search & Filters -->
+      <div class="explorer-controls">
+        <div class="search-wrap">
+          <i data-lucide="search" class="search-icon"></i>
+          <input type="text" class="search-input" placeholder="Search programs, universities…" id="program-search" />
+        </div>
+        <div class="filter-row">
+          <select class="filter-select" id="filter-uni">
+            <option value="">All Universities</option>
+            <option>University of Toronto</option>
+            <option>University of Waterloo</option>
+            <option>McMaster University</option>
+            <option>Western University</option>
+            <option>Queen's University</option>
+            <option>York University</option>
+            <option>Ryerson (Toronto Metropolitan)</option>
+          </select>
+          <select class="filter-select" id="filter-type">
+            <option value="">All Program Types</option>
+            <option>Engineering</option>
+            <option>Computer Science</option>
+            <option>Business</option>
+            <option>Arts & Humanities</option>
+            <option>Health Sciences</option>
+            <option>Science</option>
+          </select>
+          <label class="toggle-wrap">
+            <input type="checkbox" id="filter-coop" />
+            <span class="toggle-slider"></span>
+            <span>Co-op only</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Program Cards Grid -->
+      <div class="programs-grid" id="programs-grid">
+        <!-- Cards injected by JS -->
+      </div>
+    </section>
+
+    <!-- =============================================
+         PAGE: APPLICATION BUILDER
+    ============================================= -->
+    <section class="page" id="page-builder">
+      <!-- Step Indicator -->
+      <div class="step-indicator">
+        <div class="step done" data-step="1">
+          <div class="step-dot"><i data-lucide="check"></i></div>
+          <span>Personal</span>
+        </div>
+        <div class="step-line done"></div>
+        <div class="step done" data-step="2">
+          <div class="step-dot"><i data-lucide="check"></i></div>
+          <span>Academic</span>
+        </div>
+        <div class="step-line done"></div>
+        <div class="step done" data-step="3">
+          <div class="step-dot"><i data-lucide="check"></i></div>
+          <span>Programs</span>
+        </div>
+        <div class="step-line" id="line-3-4"></div>
+        <div class="step active" data-step="4" id="step-4">
+          <div class="step-dot">4</div>
+          <span>Review</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" data-step="5" id="step-5">
+          <div class="step-dot">5</div>
+          <span>Submit</span>
+        </div>
+      </div>
+
+      <!-- Step Panels -->
+      <div class="builder-panel" id="builder-step-1">
+        <div class="panel-header">
+          <h2>Personal Information</h2>
+          <p>Tell us about yourself</p>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Legal First Name</label>
+            <input type="text" value="Jamie" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label>Legal Last Name</label>
+            <input type="text" value="Bhavsar" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label>Date of Birth</label>
+            <input type="date" value="2006-09-14" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label>Ontario Student Number (OSN)</label>
+            <input type="text" value="123456789" class="form-input" />
+          </div>
+          <div class="form-group full">
+            <label>Email Address</label>
+            <input type="email" value="jamie.bhavsar@email.com" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" value="+1 (905) 555-0192" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label>Citizenship Status</label>
+            <select class="form-input">
+              <option selected>Canadian Citizen</option>
+              <option>Permanent Resident</option>
+              <option>International Student</option>
+            </select>
+          </div>
+        </div>
+        <div class="panel-actions">
+          <button class="btn-primary" onclick="goToStep(2)">Save & Continue →</button>
+        </div>
+      </div>
+
+      <div class="builder-panel hidden" id="builder-step-2">
+        <div class="panel-header">
+          <h2>Academic History</h2>
+          <p>Enter your high school information and grades</p>
+        </div>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>High School Name</label>
+            <input type="text" value="Oshawa Central Collegiate" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label>Ministry School Code</label>
+            <input type="text" value="334518" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label>Expected Graduation Year</label>
+            <input type="number" value="2026" class="form-input" />
+          </div>
+          <div class="form-group full">
+            <label>Top 6 Course Grades (4U/M)</label>
+            <div class="grade-grid">
+              <div class="grade-item"><span>MHF4U</span><input type="number" value="94" class="grade-input" /></div>
+              <div class="grade-item"><span>MCV4U</span><input type="number" value="91" class="grade-input" /></div>
+              <div class="grade-item"><span>ICS4U</span><input type="number" value="97" class="grade-input" /></div>
+              <div class="grade-item"><span>SPH4U</span><input type="number" value="89" class="grade-input" /></div>
+              <div class="grade-item"><span>ENG4U</span><input type="number" value="88" class="grade-input" /></div>
+              <div class="grade-item"><span>SCH4U</span><input type="number" value="86" class="grade-input" /></div>
+            </div>
+            <div class="average-display">Average: <strong>90.8%</strong></div>
+          </div>
+        </div>
+        <div class="panel-actions">
+          <button class="btn-ghost" onclick="goToStep(1)">← Back</button>
+          <button class="btn-primary" onclick="goToStep(3)">Save & Continue →</button>
+        </div>
+      </div>
+
+      <div class="builder-panel hidden" id="builder-step-3">
+        <div class="panel-header">
+          <h2>Program Selection</h2>
+          <p>Choose up to 3 programs to apply to</p>
+        </div>
+        <div class="selected-programs">
+          <div class="sel-prog-card">
+            <div class="sel-prog-num">1</div>
+            <div class="sel-prog-info">
+              <span class="sel-prog-title">Computer Science</span>
+              <span class="sel-prog-uni">University of Toronto — St. George</span>
+            </div>
+            <span class="status-chip submitted" style="margin-left:auto;">Primary</span>
+            <button class="icon-btn red"><i data-lucide="x"></i></button>
+          </div>
+          <div class="sel-prog-card">
+            <div class="sel-prog-num">2</div>
+            <div class="sel-prog-info">
+              <span class="sel-prog-title">Software Engineering</span>
+              <span class="sel-prog-uni">University of Waterloo — Co-op</span>
+            </div>
+            <button class="icon-btn red" style="margin-left:auto;"><i data-lucide="x"></i></button>
+          </div>
+          <div class="sel-prog-card">
+            <div class="sel-prog-num">3</div>
+            <div class="sel-prog-info">
+              <span class="sel-prog-title">Computer Science</span>
+              <span class="sel-prog-uni">York University</span>
+            </div>
+            <button class="icon-btn red" style="margin-left:auto;"><i data-lucide="x"></i></button>
+          </div>
+          <button class="add-program-btn" data-page="explorer">
+            <i data-lucide="plus"></i> Add another program
+          </button>
+        </div>
+        <div class="panel-actions">
+          <button class="btn-ghost" onclick="goToStep(2)">← Back</button>
+          <button class="btn-primary" onclick="goToStep(4)">Save & Continue →</button>
+        </div>
+      </div>
+
+      <div class="builder-panel hidden" id="builder-step-4">
+        <div class="panel-header">
+          <h2>Review Your Application</h2>
+          <p>Check everything carefully before submitting</p>
+        </div>
+        <div class="review-sections">
+          <div class="review-block">
+            <div class="review-block-header">
+              <span>Personal Information</span>
+              <button class="link-btn" onclick="goToStep(1)">Edit</button>
+            </div>
+            <div class="review-row"><span>Name</span><strong>Jamie Bhavsar</strong></div>
+            <div class="review-row"><span>Date of Birth</span><strong>September 14, 2006</strong></div>
+            <div class="review-row"><span>Email</span><strong>jamie.bhavsar@email.com</strong></div>
+            <div class="review-row"><span>Citizenship</span><strong>Canadian Citizen</strong></div>
+          </div>
+          <div class="review-block">
+            <div class="review-block-header">
+              <span>Academic History</span>
+              <button class="link-btn" onclick="goToStep(2)">Edit</button>
+            </div>
+            <div class="review-row"><span>High School</span><strong>Oshawa Central Collegiate</strong></div>
+            <div class="review-row"><span>Grad Year</span><strong>2026</strong></div>
+            <div class="review-row"><span>Average</span><strong>90.8%</strong></div>
+          </div>
+          <div class="review-block">
+            <div class="review-block-header">
+              <span>Program Choices</span>
+              <button class="link-btn" onclick="goToStep(3)">Edit</button>
+            </div>
+            <div class="review-row"><span>1st Choice</span><strong>CS — University of Toronto</strong></div>
+            <div class="review-row"><span>2nd Choice</span><strong>Software Eng — Waterloo (Co-op)</strong></div>
+            <div class="review-row"><span>3rd Choice</span><strong>CS — York University</strong></div>
+          </div>
+          <div class="review-alert">
+            <i data-lucide="alert-circle"></i>
+            <span>Please review all information carefully. Changes may not be possible after submission.</span>
+          </div>
+        </div>
+        <div class="panel-actions">
+          <button class="btn-ghost" onclick="goToStep(3)">← Back</button>
+          <button class="btn-primary" onclick="goToStep(5)">Confirm & Proceed to Payment →</button>
+        </div>
+      </div>
+
+      <div class="builder-panel hidden" id="builder-step-5">
+        <div class="panel-header">
+          <h2>Payment & Submission</h2>
+          <p>Complete your application fee to submit</p>
+        </div>
+        <div class="payment-summary">
+          <div class="pay-item">
+            <span>Application Fee (3 programs)</span>
+            <strong>$156.00</strong>
+          </div>
+          <div class="pay-item">
+            <span>Processing Fee</span>
+            <strong>$0.00</strong>
+          </div>
+          <div class="pay-divider"></div>
+          <div class="pay-item total">
+            <span>Total Due</span>
+            <strong>$156.00 CAD</strong>
+          </div>
+        </div>
+        <div class="form-grid" style="margin-top:1.5rem;">
+          <div class="form-group full">
+            <label>Cardholder Name</label>
+            <input type="text" placeholder="Name on card" class="form-input" />
+          </div>
+          <div class="form-group full">
+            <label>Card Number</label>
+            <input type="text" placeholder="•••• •••• •••• ••••" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label>Expiry</label>
+            <input type="text" placeholder="MM / YY" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label>CVV</label>
+            <input type="text" placeholder="•••" class="form-input" />
+          </div>
+        </div>
+        <div class="panel-actions">
+          <button class="btn-ghost" onclick="goToStep(4)">← Back</button>
+          <button class="btn-primary btn-submit" onclick="submitApplication()">
+            <i data-lucide="send"></i> Pay & Submit Application
+          </button>
+        </div>
+      </div>
+
+      <!-- Success State -->
+      <div class="builder-panel hidden success-panel" id="builder-step-success">
+        <div class="success-icon">
+          <svg viewBox="0 0 80 80" fill="none">
+            <circle cx="40" cy="40" r="38" stroke="var(--green-500)" stroke-width="2"/>
+            <path d="M25 40L35 50L55 30" stroke="var(--green-500)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h2>Application Submitted! 🎉</h2>
+        <p>Your application has been received. Your OUAC reference number is <strong>#2026-ON-847291</strong>.</p>
+        <p>Track your application status and receive offer updates in the tracker.</p>
+        <button class="btn-primary" data-page="tracker">Go to Application Tracker →</button>
+      </div>
+    </section>
+
+    <!-- =============================================
+         PAGE: APPLICATION TRACKER
+    ============================================= -->
+    <section class="page" id="page-tracker">
+      <div class="page-hero">
+        <h2>Application Tracker</h2>
+        <p>Track the status of each application in real time</p>
+      </div>
+
+      <div class="tracker-grid">
+        <!-- University 1: UofT -->
+        <div class="tracker-card">
+          <div class="tracker-card-header">
+            <div class="uni-logo ut">UT</div>
+            <div>
+              <span class="uni-name">University of Toronto</span>
+              <span class="uni-program">Computer Science — St. George</span>
+            </div>
+            <span class="status-chip submitted" style="margin-left:auto;">Submitted</span>
+          </div>
+          <div class="event-timeline">
+            <div class="event done">
+              <div class="evt-dot done"></div>
+              <div class="evt-info">
+                <span class="evt-title">Application Submitted</span>
+                <span class="evt-date">January 3, 2026</span>
+              </div>
+            </div>
+            <div class="event done">
+              <div class="evt-dot done"></div>
+              <div class="evt-info">
+                <span class="evt-title">Application Received by University</span>
+                <span class="evt-date">January 5, 2026</span>
+              </div>
+            </div>
+            <div class="event active">
+              <div class="evt-dot active"></div>
+              <div class="evt-info">
+                <span class="evt-title">Under Review</span>
+                <span class="evt-date">In progress</span>
+              </div>
+            </div>
+            <div class="event">
+              <div class="evt-dot future"></div>
+              <div class="evt-info">
+                <span class="evt-title">Admission Decision</span>
+                <span class="evt-date">Expected Feb–Mar 2026</span>
+              </div>
+            </div>
+          </div>
+          <div class="doc-status">
+            <span class="doc-label">Documents</span>
+            <div class="doc-items">
+              <span class="doc-chip done"><i data-lucide="check" style="width:12px;height:12px;"></i> Transcript</span>
+              <span class="doc-chip done"><i data-lucide="check" style="width:12px;height:12px;"></i> OSN Verified</span>
+              <span class="doc-chip pending"><i data-lucide="clock" style="width:12px;height:12px;"></i> Mid-Year Grades</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- University 2: Waterloo -->
+        <div class="tracker-card">
+          <div class="tracker-card-header">
+            <div class="uni-logo uw">UW</div>
+            <div>
+              <span class="uni-name">University of Waterloo</span>
+              <span class="uni-program">Software Engineering — Co-op</span>
+            </div>
+            <span class="status-chip review" style="margin-left:auto;">Under Review</span>
+          </div>
+          <div class="event-timeline">
+            <div class="event done">
+              <div class="evt-dot done"></div>
+              <div class="evt-info">
+                <span class="evt-title">Application Submitted</span>
+                <span class="evt-date">January 3, 2026</span>
+              </div>
+            </div>
+            <div class="event active">
+              <div class="evt-dot active"></div>
+              <div class="evt-info">
+                <span class="evt-title">AIF (Admission Information Form) Required</span>
+                <span class="evt-date">Due February 1, 2026</span>
+              </div>
+            </div>
+            <div class="event">
+              <div class="evt-dot future"></div>
+              <div class="evt-info">
+                <span class="evt-title">Application Under Review</span>
+                <span class="evt-date">Pending</span>
+              </div>
+            </div>
+            <div class="event">
+              <div class="evt-dot future"></div>
+              <div class="evt-info">
+                <span class="evt-title">Admission Decision</span>
+                <span class="evt-date">Expected Mar–Apr 2026</span>
+              </div>
+            </div>
+          </div>
+          <div class="doc-status">
+            <span class="doc-label">Documents</span>
+            <div class="doc-items">
+              <span class="doc-chip done"><i data-lucide="check" style="width:12px;height:12px;"></i> Transcript</span>
+              <span class="doc-chip action"><i data-lucide="alert-circle" style="width:12px;height:12px;"></i> AIF Needed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- University 3: York -->
+        <div class="tracker-card">
+          <div class="tracker-card-header">
+            <div class="uni-logo yor">YU</div>
+            <div>
+              <span class="uni-name">York University</span>
+              <span class="uni-program">Computer Science — Keele</span>
+            </div>
+            <span class="status-chip draft" style="margin-left:auto;">Draft</span>
+          </div>
+          <div class="event-timeline">
+            <div class="event active">
+              <div class="evt-dot active"></div>
+              <div class="evt-info">
+                <span class="evt-title">Application In Progress</span>
+                <span class="evt-date">Started January 3, 2026</span>
+              </div>
+            </div>
+            <div class="event">
+              <div class="evt-dot future"></div>
+              <div class="evt-info">
+                <span class="evt-title">Awaiting Submission</span>
+                <span class="evt-date">—</span>
+              </div>
+            </div>
+          </div>
+          <div class="doc-status">
+            <span class="doc-label">Action Required</span>
+            <div class="doc-items">
+              <span class="doc-chip action"><i data-lucide="alert-circle" style="width:12px;height:12px;"></i> Submit Application</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /main-content -->
+
+  <!-- =============================================
+       AI ASSISTANT PANEL (SIDEBAR)
+  ============================================= -->
+  <aside class="ai-panel" id="ai-panel">
+    <div class="ai-panel-header">
+      <div class="ai-avatar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2Z" fill="var(--green-600)" opacity="0.15"/>
+          <path d="M8 12C8 9.8 9.8 8 12 8C14.2 8 16 9.8 16 12" stroke="var(--green-600)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="15" r="1.5" fill="var(--green-600)"/>
+        </svg>
+      </div>
+      <div>
+        <span class="ai-title">OUAC Assistant</span>
+        <span class="ai-subtitle">Powered by AI</span>
+      </div>
+      <button class="icon-btn" id="ai-close"><i data-lucide="x"></i></button>
+    </div>
+
+    <div class="ai-messages" id="ai-messages">
+      <div class="ai-msg bot">
+        <div class="msg-bubble">
+          Hi Jamie! 👋 I'm your OUAC assistant. I can help you with program requirements, deadlines, application questions, and more. What would you like to know?
+        </div>
+      </div>
+      <div class="ai-suggestions">
+        <button class="suggestion-btn" onclick="askAI('What are the requirements for UofT Computer Science?')">UofT CS requirements</button>
+        <button class="suggestion-btn" onclick="askAI('When is the equal consideration deadline?')">Deadline info</button>
+        <button class="suggestion-btn" onclick="askAI('Can you check my application for issues?')">Check my application</button>
+      </div>
+    </div>
+
+    <div class="ai-input-wrap">
+      <input type="text" class="ai-input" id="ai-input" placeholder="Ask a question…" />
+      <button class="ai-send-btn" id="ai-send">
+        <i data-lucide="send"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Overlay for mobile AI panel -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- =============================================
+       SUCCESS TOAST
+  ============================================= -->
+  <div class="toast" id="toast">
+    <i data-lucide="check-circle"></i>
+    <span id="toast-msg">Action completed</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
